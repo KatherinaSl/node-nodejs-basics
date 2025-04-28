@@ -1,5 +1,17 @@
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { readFile } from "node:fs/promises";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const path = join(__dirname, "files", "fileToRead.txt");
+
 const read = async () => {
-    // Write your code here 
+  try {
+    const content = await readFile(path, { encoding: "utf8" });
+    console.log(content);
+  } catch {
+    throw new Error("FS operation is failed");
+  }
 };
 
 await read();
