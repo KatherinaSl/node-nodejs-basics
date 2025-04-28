@@ -1,8 +1,8 @@
-import { join, dirname } from "path";
-import { fileURLToPath } from "url";
-import { pipeline } from "stream/promises";
-import { createReadStream } from "fs";
-import { createHash } from "crypto";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { pipeline } from "node:stream/promises";
+import { createReadStream } from "node:fs";
+import { createHash } from "node:crypto";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const path = join(__dirname, "files", "fileToCalculateHashFor.txt");

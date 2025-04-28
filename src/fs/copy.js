@@ -1,14 +1,17 @@
-import { copyFile } from "node:fs/promises";
-import { join, dirname } from "path";
-import { fileURLToPath } from "url";
+import { cp, mkdir } from "node:fs/promises";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const srcPath = join(__dirname, "files", "fresh.txt");
-const destPath = join(__dirname, "files", "files_copy.txt");
+const srcPath = join(__dirname, "files");
+const destPath = join(__dirname, "files_copy");
 
 const copy = async () => {
   try {
-    await copyFile(srcPath, destPath);
+    await mkdir(destPath);
+    await cp(srcPath, destPath, {
+      recursive: true,
+    });
   } catch {
     throw new Error("FS operation is failed");
   }

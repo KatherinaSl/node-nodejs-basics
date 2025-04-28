@@ -1,6 +1,6 @@
-import { join, dirname } from "path";
-import { fileURLToPath } from "url";
-import fs from "fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import fs from "node:fs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const path = join(__dirname, "files", "fileToWrite.txt");

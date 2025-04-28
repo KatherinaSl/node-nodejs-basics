@@ -1,7 +1,7 @@
-import fs from "fs";
-import zlib from "zlib";
-import { join, dirname } from "path";
-import { fileURLToPath } from "url";
+import fs from "node:fs";
+import zlib from "node:zlib";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pathToFile = join(__dirname, "files", "fileToCompress.txt");

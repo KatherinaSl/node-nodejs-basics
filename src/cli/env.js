@@ -5,6 +5,7 @@ const parseEnv = () => {
     .filter(([key]) => key.startsWith(prefix))
     .map(([key, value]) => `${key}=${value}`)
     .join("; ");
+  console.log(result);
 };
 
 parseEnv();

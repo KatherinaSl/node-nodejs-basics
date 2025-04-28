@@ -1,6 +1,6 @@
 import path from "path";
-import { release, version } from "os";
-import { createServer as createServerHttp } from "http";
+import { release, version } from "node:os";
+import { createServer as createServerHttp } from "node:http";
 import "./files/c.cjs";
 
 const random = Math.random();
@@ -10,9 +10,9 @@ const filename = import.meta.filename;
 let unknownObject;
 
 if (random > 0.5) {
-  await import("./files/a.json", { with: { type: "json" } });
+  unknownObject = await import("./files/a.json", { with: { type: "json" } });
 } else {
-  await import("./files/b.json", { with: { type: "json" } });
+  unknownObject = await import("./files/b.json", { with: { type: "json" } });
 }
 
 console.log(`Release ${release()}`);

@@ -1,9 +1,9 @@
-import { Transform } from "stream";
+import { Transform } from "node:stream";
 
 const transform = async () => {
   const transformData = new Transform({
     transform(chunk, _, callback) {
-      this.push(chunk.toString().split("").reverse().join(""));
+      this.push(chunk.toString().split("").reverse().join("") + "\n");
       callback();
     },
   });
