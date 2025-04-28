@@ -1,5 +1,5 @@
 const transform = async () => {
-    // Write your code here 
+    process.stdin.on();
 };
 
 await transform();
